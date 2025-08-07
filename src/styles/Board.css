@@ -1,0 +1,14 @@
+.square {
+  background: #fd8b8b;
+  border: 1px solid #050505;
+  color: aliceblue;
+   float: left;
+  font-weight: bold;
+  height: 40px;
+  text-align: center;
+  width: 40px;
+}
+
+.rows{
+  display: table
+}

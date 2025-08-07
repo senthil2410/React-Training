@@ -7,7 +7,8 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, 'dist'),
-    clean: true
+    clean: true,
+     publicPath: '/', 
   },
 
   module: {
@@ -35,6 +36,8 @@ module.exports = {
   ],
 
   devServer: {
+      historyApiFallback: true, 
+    open:true,
     port: 3000,
     static: {
       directory: path.join(__dirname, 'public'),
@@ -44,7 +47,10 @@ module.exports = {
 
   
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
+    alias:{
+      '@components':path.resolve(__dirname,'src/components')
+    }
   },
 
   mode: 'development'
