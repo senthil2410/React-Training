@@ -1,0 +1,17 @@
+table {
+  width: 80%;
+  margin: 20px auto;
+  background-color: rgb(245, 234, 234);
+}
+
+th,
+td {
+  border: 1px solid #cecccc;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #a8a6a6;
+  color: white;
+}

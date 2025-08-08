@@ -1,7 +1,6 @@
 import React from "react"
 import photo from "../assets/raina.jpeg";
-import "../styles/Profile.css"
-import "../"
+import "../assets/styles/Profile.css"
 const cricketer=
 {
     name:"Suresh Raina",

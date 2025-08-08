@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../styles/StateManagement.css"
+// import "../styles/StateManagement.css"
 const State=()=>
 {
     const [count,setCount]=useState(1);

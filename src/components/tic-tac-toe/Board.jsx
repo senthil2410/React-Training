@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Square from "./Square";
-import "../../styles/Board.css";
+import "../../assets/styles/Board.css"
 const Board=()=>
 {
 
