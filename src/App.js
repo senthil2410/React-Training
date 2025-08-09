@@ -14,6 +14,15 @@ import Product from "./components/Products/Product";
 import FilterProduct from "./components/Products/FilterProduct";
 import Mounting from "./components/Effect/Mounting";
 import Updating from "./components/Effect/Updating";
+import Lazy from "./components/CodeSpliting/Lazy";
+import Login from "./components/Context/Login";
+import { AuthProvider } from "./components/Context/AuthContext";
+import Home from "./components/Context/Home";
+import Password from "./components/Accessibility/Password";
+import ErrorChecking from "./components/ErrorBoundry/ErrorChecking";
+import ErrorComponent from "./components/ErrorBoundry/ErrorComponent";
+import ErrorBoundryClass from "./components/ErrorBoundry/ErrorBoundaryClass";
+
 const Greeting=()=>
 {
     return <h3>Hello World</h3>
@@ -22,6 +31,7 @@ const Greeting=()=>
 export  const App = () => {
   return (
     <Router>
+      <AuthProvider>
      {/* <>
       <h1>React Configuration</h1>
       <img src={hotel} alt="Hotel" />
@@ -37,11 +47,17 @@ export  const App = () => {
           <Route path="/list" element={<List/>} />
           <Route path="/form" element={<FormComponents/>} />
           <Route path="/product" element={<Product />}/>
-          <Route path="/filterproduct" elemeent={<FilterProduct />} />
+          <Route path="/filterproduct" element={<FilterProduct />} />
           <Route path="/mount" element={<Mounting />} />
           <Route path="/update" element={<Updating />} />
-        </Routes>
-      
+          <Route path="/lazy"  element={<Lazy />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/home"  element={<Home />} />
+          <Route path="/password" element={<Password />} />
+          <Route path="/error"  element={<ErrorChecking>< ErrorComponent/></ErrorChecking>}/>
+          <Route path="/errorclass" element={<ErrorBoundryClass><ErrorComponent /></ErrorBoundryClass>}/>
+         </Routes>
+      </AuthProvider>
     </Router>
   );
 };
