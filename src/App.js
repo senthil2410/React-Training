@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
 import hotel from "./assets/hotel.jpg"
 import "./assets/styles/App.css"
@@ -22,6 +22,10 @@ import Password from "./components/Accessibility/Password";
 import ErrorChecking from "./components/ErrorBoundry/ErrorChecking";
 import ErrorComponent from "./components/ErrorBoundry/ErrorComponent";
 import ErrorBoundryClass from "./components/ErrorBoundry/ErrorBoundaryClass";
+import ParentComponent from "./components/ForwardingRef/ParentComponent";
+import Fragments from "./components/Fragment/Fragments";
+import Portals from "./components/Portals/Portals";
+import LoginForm from "./components/Portals/LoginForm";
 
 const Greeting=()=>
 {
@@ -56,6 +60,10 @@ export  const App = () => {
           <Route path="/password" element={<Password />} />
           <Route path="/error"  element={<ErrorChecking>< ErrorComponent/></ErrorChecking>}/>
           <Route path="/errorclass" element={<ErrorBoundryClass><ErrorComponent /></ErrorBoundryClass>}/>
+          <Route path="/forwardref" element={<ParentComponent />} />
+          <Route path="/fragment"  element={<Fragments />} />
+          <Route path="/portal"  element={<Portals />} />
+          <Route path="/loginform" element={<LoginForm />} />
          </Routes>
       </AuthProvider>
     </Router>

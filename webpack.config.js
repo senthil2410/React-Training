@@ -18,10 +18,25 @@ module.exports = {
         exclude: /node_modules/,
         use: "babel-loader"
       },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
-      },
+       {
+      test: /\.module\.css$/,
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            modules: {
+             localIdentName: '[name]__[local]__[hash:base64:5]'
+            }
+          }
+        }
+      ]
+    },
+    {
+      test: /\.css$/,
+      exclude: /\.module\.css$/,
+      use: ['style-loader', 'css-loader']
+    },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
         type: 'asset/resource'
