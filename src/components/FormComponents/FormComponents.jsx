@@ -3,6 +3,12 @@ import "../FormComponents/FormComponents.css"
 
 const FormComponents=()=>
 {
+      const formfield= [{ label: "Name", type: "text", name: "name", placeholder: "Enter the name" },
+                        { label: "Password", type: "password", name: "password", placeholder: "Enter the password" },
+                        { label: "Email", type: "email", name: "email", placeholder: "Enter the email" },
+                        { label: "DOB", type: "date", name: "dob", placeholder: "Enter DOB" }]
+
+    const genders = ["male", "female", "others"];
 
     const[user,setUser]=useState(
         {
@@ -40,75 +46,39 @@ const FormComponents=()=>
     return(
         <div>
             <form className="form-container" onSubmit={handleSubmit}>
-            <div className="form-group">
-           <div>
-            <label>Name : </label>
-             <input type="text"
-                name="name"
-                value={user.name}
-                placeholder="Enter the name"
-                onChange={handleChange}
-                required
-             />
-           </div>
-           <div>
-            <label>Password : </label>
-             <input type="password"
-                name="password"
-                value={user.password}
-                placeholder="Enter the Password"
-                onChange={handleChange}
-                required
-            />
-            </div>
-            <div>
-            <label>Email : </label>
-             <input type="email"
-                name="email"
-                value={user.email}
-                placeholder="Enter the email"
-                onChange={handleChange}
-                required
-            />
-           </div>
-           <div>
-            <label>DOB :</label>
-             <input type="date"
-                name="dob"
-                value={user.dob}
-                placeholder="Enter the Date of Birth"
-                onChange={handleChange}
-                required
-            />
-           </div>
-           <div className="gender" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '15px' }}>
+
+            {formfield.map(form => (
+         <div className="form-group">
+            <label>{form.name}</label>
+            <input type={form.type}
+                   name={form.name}
+                   value={user[form.name]}
+                   placeholder={form.placeholder}
+                   onChange={handleChange}
+                    />
+
+        </div>
+      ))}
+           <div className="form-group gender" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '15px' }}>
              <label>Select Gender : </label>
-             <label>
-             <input type="radio" 
-                name="gender"
-                value="male"
-                checked={user.gender==="male"}
-                onChange={handleChange}
-             />Male
-             </label>
-             <label>
-             <input type="radio" 
-                name="gender"
-                value="female"
-                checked={user.gender==="female"}
-                onChange={handleChange}
-             />Female
-             </label>
-             <label>
-             <input type="radio" 
-                name="gender"
-                value="others"
-                checked={user.gender==="others"}
-                onChange={handleChange}
-             />Others
-             </label>
-           </div>
-           <div>
+             {genders.map((gender)=>
+            (
+                <label>
+                    <input
+                     type="radio"
+                     name="gender"
+                     value={gender}
+                     checked={user.gender=gender}
+                     onChange={handleChange}
+                     />
+                     {gender}
+                </label>
+
+            ))}
+              
+             </div>
+           
+           <div className="form-group course">
              <label>Select Course</label>
              <select name="course"
                 value={user.course}
@@ -119,14 +89,14 @@ const FormComponents=()=>
                        <option value="ECE">ECE</option>
                 </select>
            </div>
-           <div>
+           <div className="form-group file"  >
              <label>Aadhar Card</label>
              <input type="file" 
                     placeholder="Provide the aadhar-card copy"
                     name="file"
              />
            </div>
-            <div>
+            <div className="form-group check"  >
                 <label>
                   <input type="checkbox"
                      name="agree"
@@ -141,10 +111,10 @@ const FormComponents=()=>
                 <button type="submit">Submit</button>
             </div>
      
-          </div>
+          
        </form>
        
-     </div>   
+     </div>  
     )
 }
 

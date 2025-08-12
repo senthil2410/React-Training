@@ -17,27 +17,27 @@ const List=()=>
 
     useEffect(()=>
     {
-        const fetchUsers=async()=>
-        {
-              try{
-             //   const response=await fetch("https://fakestoreapi.com/users");
-                const result=await response.json()||user;
-                setData(result);
-              }
-              catch(err)
+               fetch("https://fakestoreapi.com/users")
+              .then((response) => {
+               if (!response.ok) {
+                   throw new Error(`Error ${response.status}`);
+                }
+               return response.json()
+              })
+              .then(data=>setData(data))
+              
+              .catch((err)=>
               {
                 console.log("There is some error",err);
                 setError(true);
                 setData(user);
-              }
-        }
-        
-        fetchUsers();
-    },[]);
+              });
+        },[]);
 
     return(
         <div> 
-            <h1 style={{textAlign:"center"}}>LIST AND KEYS</h1>   
+            <h1 style={{textAlign:"center"}}>LIST AND KEYS</h1> 
+            {error &&<p style={{color:"red"}}>Failed to fetch the data </p>}  
       <ul>
         {data.map((user, index) => (
           <li key={index}>

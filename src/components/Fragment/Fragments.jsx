@@ -20,19 +20,12 @@ const Fragments=()=>
    const[end,setEnd]=useState();
 
     return(
-    // <>
-    // <Profile />
-    // <List />
-    // </>
-   <>
-   {person.map(({ id, name, place }) => (
-        <Fragment key={id}>
-          <div className={styles.info}>
-         <Displayname name={name}  /> -
-         <DisplayPlace place={place} /> 
-     </div> 
-
-        </Fragment>
+  
+     <>
+      {person.map(({ id, name, place }) => (
+        <div key={id} className={styles.info}>
+          <Displayname name={name} /> - <DisplayPlace place={place} />
+        </div>
       ))}
 
       <div className={styles.datepicker}>

@@ -4,8 +4,8 @@ import hotel from "./assets/hotel.jpg"
 import "./assets/styles/App.css"
 import Button from "./components/Button";
 import Profile from "./components/Profile";
-import Square from "./components/tic-tac-toe/Square";
-import Board from "./components/tic-tac-toe/Board";
+import Square from "./components/TicTacToe/Square";
+import Board from "./components/TicTacToe/Board";
 import State from "./components/StateManagement";
 import ConditionalRendering from "./components/ConditionalRendering/ConditionalRendering";
 import List from "./components/List/List";
@@ -26,6 +26,13 @@ import ParentComponent from "./components/ForwardingRef/ParentComponent";
 import Fragments from "./components/Fragment/Fragments";
 import Portals from "./components/Portals/Portals";
 import LoginForm from "./components/Portals/LoginForm";
+import StateManagement from "./components/StateManagement";
+import ProfilerComponent from "./components/Profiler/ProfilerComponent";
+import WithOutJsx from "./components/CreateElement/WithOutJsx";
+import VideoPlayer from "./components/UseRefHook.jsx/Videoplayer";
+import Rendering from "./components/ConditionalRendering/Rendering";
+import ImageScroller from "./components/UseRefHook.jsx/ImageScroller";
+
 
 const Greeting=()=>
 {
@@ -46,8 +53,9 @@ export  const App = () => {
         <Routes>
           <Route path="/" element={<Profile />} />
           <Route path="/board" element={<Board />} />
-          <Route path="/state" element={<State />} />
-          <Route path="/render" element={<ConditionalRendering/>} />
+          <Route path="/state" element={<StateManagement />} />
+          <Route path="/render" element={<Rendering />} />
+          <Route path="/conditional/render" element={<ConditionalRendering />}/>
           <Route path="/list" element={<List/>} />
           <Route path="/form" element={<FormComponents/>} />
           <Route path="/product" element={<Product />}/>
@@ -64,6 +72,10 @@ export  const App = () => {
           <Route path="/fragment"  element={<Fragments />} />
           <Route path="/portal"  element={<Portals />} />
           <Route path="/loginform" element={<LoginForm />} />
+          <Route path='/profiler' element={<ProfilerComponent />} />
+          <Route path="/withoutjsx" element={<WithOutJsx />} />
+          <Route path="/video" element={<VideoPlayer />} />
+          <Route path="/imagepath" element={<ImageScroller />} />
          </Routes>
       </AuthProvider>
     </Router>
