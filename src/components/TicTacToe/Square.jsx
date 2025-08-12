@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-
+import * as styles from "./Board.module.css"
 const Square=({value})=>
 {
     return (
         <>
-         <button className="square" onClick={handleClick}>{value}</button>
+         <button className={styles.square}>{value}</button>
         </>
         )
 }
