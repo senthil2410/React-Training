@@ -12,6 +12,7 @@ const Updating=()=>
         useEffect(()=>
         {
             fetchData();
+            console.log("component is rerendering");
     
         },[count]);
     

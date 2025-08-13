@@ -32,6 +32,13 @@ import WithOutJsx from "./components/CreateElement/WithOutJsx";
 import VideoPlayer from "./components/UseRefHook.jsx/Videoplayer";
 import Rendering from "./components/ConditionalRendering/Rendering";
 import ImageScroller from "./components/UseRefHook.jsx/ImageScroller";
+import UncontrolledBehavior from "./components/UncontrolledComponent/UncontrolledComponent";
+import CustomElement from "./components/CustomElement/CustomElement";
+import UseCallback from "./components/Hooks/UseCallback/UseCallback";
+import UseMemo from "./components/Hooks/UseMemo/UseMemo";
+import UseDebugValue from "./components/Hooks/UseDebugValue/UseDebugValue";
+import FilterMemo from "./components/Hooks/UseMemo/FilterMemo";
+import UncontrolledComponent from "./components/UncontrolledComponent/UncontrolledComponent";
 
 
 const Greeting=()=>
@@ -76,6 +83,12 @@ export  const App = () => {
           <Route path="/withoutjsx" element={<WithOutJsx />} />
           <Route path="/video" element={<VideoPlayer />} />
           <Route path="/imagepath" element={<ImageScroller />} />
+          <Route path="/uncontrolled" element={<UncontrolledComponent />}/>
+          <Route path="/custom" element={<CustomElement />} />
+          <Route path="/usecallback" element={<UseCallback />} />
+          <Route path="/usememo" element={<UseMemo />} />
+          <Route path="/usedebug" element={<UseDebugValue />} />
+          <Route path="filtermemo" element={<FilterMemo />} />
          </Routes>
       </AuthProvider>
     </Router>
