@@ -39,6 +39,15 @@ const FormComponents=()=>
         e.preventDefault();
         console.log("Form is submitted");
         alert("Form is Submittted");
+        setUser( {
+            name:"",
+            password:"",
+            email:"",
+            dob:"",
+            gender:"",
+            course:"CSE",
+            agree:false
+        })
     }
 
 

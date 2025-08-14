@@ -32,13 +32,19 @@ import WithOutJsx from "./components/CreateElement/WithOutJsx";
 import VideoPlayer from "./components/UseRefHook.jsx/Videoplayer";
 import Rendering from "./components/ConditionalRendering/Rendering";
 import ImageScroller from "./components/UseRefHook.jsx/ImageScroller";
-import UncontrolledBehavior from "./components/UncontrolledComponent/UncontrolledComponent";
 import CustomElement from "./components/CustomElement/CustomElement";
 import UseCallback from "./components/Hooks/UseCallback/UseCallback";
 import UseMemo from "./components/Hooks/UseMemo/UseMemo";
 import UseDebugValue from "./components/Hooks/UseDebugValue/UseDebugValue";
 import FilterMemo from "./components/Hooks/UseMemo/FilterMemo";
 import UncontrolledComponent from "./components/UncontrolledComponent/UncontrolledComponent";
+import Counter from "./components/Hooks/UseReducer/Counter";
+import Todo from "./components/Hooks/UseReducer/Todo";
+import UseNavigate from "./components/Hooks/UseNavigate/UseNavigate";
+import Users from "./components/Hooks/UseParams/Users";
+import UseParams from "./components/Hooks/UseParams/UseParams";
+import SearchForm from "./components/Hooks/UseLocation.jsx/SerachForm";
+import SearchUser from "./components/Hooks/UseLocation.jsx/SearchUser";
 
 
 const Greeting=()=>
@@ -89,6 +95,14 @@ export  const App = () => {
           <Route path="/usememo" element={<UseMemo />} />
           <Route path="/usedebug" element={<UseDebugValue />} />
           <Route path="filtermemo" element={<FilterMemo />} />
+          <Route path="/usereducer/counter" element={<Counter/>}/>
+          <Route path="/usereducer/todo" element={<Todo />} />
+          <Route path="/usenavigate" element={<UseNavigate />} />
+          <Route path="/useparams/users" element={<Users />} />
+          <Route path="/profile/:id" element={<UseParams />} />
+          <Route path="/uselocation/serachform" element={<SearchForm />} />
+          <Route path="/searchdata" element={<SearchUser />} />
+    
          </Routes>
       </AuthProvider>
     </Router>
