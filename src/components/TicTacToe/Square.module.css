@@ -1,0 +1,16 @@
+.squares {
+  box-sizing: border-box;
+  height: 100px;
+  width: 100px;
+  font-weight: bold;
+  background-color: aliceblue;
+  border: 2px solid rgb(160, 159, 159);
+  line-height: 100px;
+  text-align: center;
+  color: black;
+  font-size: 2rem;
+}
+
+.squares:hover{
+    background-color: rgb(153, 154, 155);
+}

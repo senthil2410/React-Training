@@ -16,7 +16,7 @@ import Mounting from "./components/Effect/Mounting";
 import Updating from "./components/Effect/Updating";
 import Lazy from "./components/CodeSpliting/Lazy";
 import Login from "./components/Context/Login";
-import { AuthProvider } from "./components/Context/AuthContext";
+import { AuthProvider } from "./HigherOrderComponenet/AuthContext";
 import Home from "./components/Context/Home";
 import Password from "./components/Accessibility/Password";
 import ErrorChecking from "./components/ErrorBoundry/ErrorChecking";
@@ -45,6 +45,11 @@ import Users from "./components/Hooks/UseParams/Users";
 import UseParams from "./components/Hooks/UseParams/UseParams";
 import SearchForm from "./components/Hooks/UseLocation.jsx/SerachForm";
 import SearchUser from "./components/Hooks/UseLocation.jsx/SearchUser";
+import ProtectedHome from "./HigherOrderComponenet/ProtectedHome";
+import ProductFetch from "./components/Hooks/CustomHooks/UseFetch/ProductFetch";
+import UseDeferredValue from "./components/Hooks/UseDeferredValue.jsx/UseDeferredValue";
+import UserInfo from "./components/Hooks/CustomHooks/UseLocalStorage/UserInfo";
+
 
 
 const Greeting=()=>
@@ -102,6 +107,10 @@ export  const App = () => {
           <Route path="/profile/:id" element={<UseParams />} />
           <Route path="/uselocation/serachform" element={<SearchForm />} />
           <Route path="/searchdata" element={<SearchUser />} />
+          <Route path="/hoc/home" element={<ProtectedHome />} />
+          <Route path="/usefetch/product" element={<ProductFetch/>} />
+          <Route path="/usedeferredvalue" element={<UseDeferredValue />} />
+          <Route path="uselocal/userinfo" element={<UserInfo />} />
     
          </Routes>
       </AuthProvider>
