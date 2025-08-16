@@ -1,14 +1,30 @@
 .board {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
-  gap:0px;
+  grid-template-columns:repeat(3,150px);
+  gap: 5px;
+  margin: 10px;
 }
 
-.square {
-  width: 100px;
-  height: 100px;
-  font-size: 2rem;
+.container
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status
+{
+  margin-bottom: 20px;
+  font-weight: bold;
+   color: rgb(2, 54, 18);
+}
+
+.reset{
+  padding: 15px;
+  font-size: 16px;
   cursor: pointer;
 }
+
+
 
 

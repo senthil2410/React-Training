@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import * as styles from "./Board.module.css"
-const Square=({value})=>
+import * as styles from "./Square.module.css"
+const Square=({value,onClick})=>
 {
     return (
-        <>
-         <button className={styles.square}>{value}</button>
-        </>
+        
+         <button className={styles.squares} onClick={onClick}>
+            {value}
+        </button>
+        
         )
 }
 
