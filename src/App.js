@@ -49,6 +49,7 @@ import ProtectedHome from "./HigherOrderComponenet/ProtectedHome";
 import ProductFetch from "./components/Hooks/CustomHooks/UseFetch/ProductFetch";
 import UseDeferredValue from "./components/Hooks/UseDeferredValue.jsx/UseDeferredValue";
 import UserInfo from "./components/Hooks/CustomHooks/UseLocalStorage/UserInfo";
+import UseTransition from "./components/Hooks/UseTransition/Usetransition";
 
 
 
@@ -111,6 +112,7 @@ export  const App = () => {
           <Route path="/usefetch/product" element={<ProductFetch/>} />
           <Route path="/usedeferredvalue" element={<UseDeferredValue />} />
           <Route path="uselocal/userinfo" element={<UserInfo />} />
+          <Route path="/usetransition" element={<UseTransition/>}/>
     
          </Routes>
       </AuthProvider>
