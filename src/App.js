@@ -50,6 +50,8 @@ import ProductFetch from "./components/Hooks/CustomHooks/UseFetch/ProductFetch";
 import UseDeferredValue from "./components/Hooks/UseDeferredValue.jsx/UseDeferredValue";
 import UserInfo from "./components/Hooks/CustomHooks/UseLocalStorage/UserInfo";
 import UseTransition from "./components/Hooks/UseTransition/Usetransition";
+import UseLayoutEffect from "./components/Hooks/UseLayout/UseLayout";
+import AppRoutes from "./AppRoutes";
 
 
 
@@ -113,7 +115,10 @@ export  const App = () => {
           <Route path="/usedeferredvalue" element={<UseDeferredValue />} />
           <Route path="uselocal/userinfo" element={<UserInfo />} />
           <Route path="/usetransition" element={<UseTransition/>}/>
-    
+          <Route path="/uselayout" element={<UseLayoutEffect />} />
+
+          {AppRoutes()}
+           
          </Routes>
       </AuthProvider>
     </Router>

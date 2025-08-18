@@ -1,6 +1,6 @@
 import React from "react";
 import { lazy, Suspense, useState } from "react";
-import ProductData from "./ProductData";
+const ProductData = React.lazy(() => import("./ProductData"));
 
 const Lazy=()=>
 {
